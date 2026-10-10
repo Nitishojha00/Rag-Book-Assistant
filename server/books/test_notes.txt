@@ -1,0 +1,39 @@
+Web Development Study Notes
+
+Chapter 1: How the Web Works
+
+The web is built on a client-server model. A browser, which is the client, sends a request to a server. The server processes the request and returns a response, usually containing HTML, CSS, JavaScript, or data in JSON format. Every resource on the web is identified by a Uniform Resource Locator, or URL, which typically includes a protocol such as https, a domain name, and an optional path.
+
+The Domain Name System translates human-readable domain names like example.com into IP addresses that computers use to route traffic. When you type a URL into a browser, the browser first asks DNS for the IP address, then opens a connection to that address and sends an HTTP request.
+
+Chapter 2: HTTP Methods and Status Codes
+
+HTTP defines several request methods. GET retrieves a resource and should not change server state. POST sends data to the server, often to create a new record. PUT replaces an existing resource entirely, while PATCH updates only part of it. DELETE removes a resource. Idempotent methods such as GET, PUT, and DELETE produce the same result when repeated, while POST is not idempotent.
+
+Status codes indicate the outcome of a request. The 200 range means success, with 200 OK for a normal response and 201 Created after a new resource is made. The 300 range means redirection. The 400 range signals client errors: 400 Bad Request, 401 Unauthorized when authentication is missing, 403 Forbidden when access is denied, and 404 Not Found when the resource does not exist. The 500 range signals server errors, with 500 Internal Server Error as the generic failure.
+
+Chapter 3: HTML Basics
+
+HTML stands for HyperText Markup Language. It describes the structure of a page using elements, which are usually written as an opening tag and a closing tag around content. Every HTML document begins with the doctype declaration <!DOCTYPE html>, followed by a root html element containing a head section for metadata and a body section for visible content. Semantic elements such as header, nav, main, article, and footer describe the meaning of content, which helps accessibility tools and search engines.
+
+Attributes provide extra information about an element. The href attribute sets the destination of a link, the src attribute points to an image or script, and the alt attribute gives a text description of an image for screen readers.
+
+Chapter 4: CSS Layout
+
+CSS controls the visual presentation of HTML. Selectors choose which elements to style, and properties set values such as color, margin, and font-size. The box model treats every element as a rectangle made of content, padding, border, and margin. Setting box-sizing to border-box makes width include padding and border, which makes layouts easier to predict.
+
+Flexbox is a one-dimensional layout system for arranging items in a row or column. The justify-content property aligns items along the main axis, and align-items aligns them along the cross axis. CSS Grid is a two-dimensional system for rows and columns at once. Media queries apply styles only when conditions such as a minimum screen width are met, which is the basis of responsive design.
+
+Chapter 5: JavaScript Fundamentals
+
+JavaScript is the programming language of the browser. Variables declared with let can be reassigned, while const creates a binding that cannot be reassigned. The var keyword is older and has function scope rather than block scope. Functions can be written as declarations or as arrow functions, and arrow functions do not have their own this binding.
+
+Asynchronous code uses promises and async/await. A promise represents a value that will be available later, and it can be pending, fulfilled, or rejected. The await keyword pauses an async function until a promise settles. The fetch function returns a promise that resolves to a response object, which must be parsed with a method such as json() before its data can be used.
+
+Chapter 6: Security Basics
+
+Cross-site scripting, or XSS, happens when an attacker injects malicious scripts into a page that other users view. The main defense is to escape or sanitize untrusted content before inserting it into the page, and to avoid innerHTML when the content comes from users. Cross-site request forgery, or CSRF, tricks a logged-in user's browser into sending unwanted requests. Anti-CSRF tokens and the SameSite cookie attribute reduce this risk. HTTPS encrypts traffic between the browser and the server, protecting data from interception.
+
+Chapter 7: Glossary
+
+API stands for Application Programming Interface, a set of endpoints that let programs exchange data. JSON, or JavaScript Object Notation, is a lightweight text format for structured data. A framework is a reusable foundation that provides structure for building applications, while a library is a collection of functions the developer calls directly. Deployment is the process of making an application available to users on a server.
